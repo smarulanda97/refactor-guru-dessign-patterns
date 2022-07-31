@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  ts-node:
+    build: 
+      context: ./docker
+      dockerfile: node.dockerfile
+    container_name: 'ts-node.server'
+    volumes:
+      - './solid:/home/node/app/solid'
+      - './patterns:/home/node/app/patterns'
