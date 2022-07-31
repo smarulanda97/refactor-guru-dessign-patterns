@@ -17,3 +17,26 @@ This paradigm is based on 4 pillars, concepts that differentiate it from others.
 `Is the ability to build new classes on top of existing ones. The main benefit of inheritance is code reused.`
 4. *Polymorphism:* Thinks of polymorphism as the ability of an object to "pretend" to be something else, usually a class it extends or an interface it implements.
 `Is the ability to detect the real class of an object and call its implementation even when its real type is unknown in the current context.`
+
+
+## Relation between objects
+
+Exists other types of relations between objects
+
+1. *Dependency:* It's the most basic and the weakest type of relationship between objects. There is a dependency between two classes if some changes to the definition of one class might result in modifications to another class. Dependency typically occurs when specifies concrete class names in the code. For example, when specifying types in method signatures, when instantiating objects via constructor call, etc. The code becomes less dependent if it uses interfaces or abstract classes instead of concrete classes.
+
+2. *Association:* It's a relationship in which one object uses or interacts with another. Association can be seen as a specialized kind of dependency, where an object always has access to the objects with which it interacts, whereas simple dependency doesn't establish a permanent link between objects.
+In general, an association is used to represent something like a field in a class. An association could be a dependency too.
+
+3. *Aggregation:* It's a specialized type of association that represent "one-to-many", "many-to-many" or "whole-part" relations between multiple objects. Usually, under aggregation, an object "has" a set of other objects and servers as a container or collection. The component can exist without the container and can be linked to several containers at the same time.
+
+4. *Composition:* It's a specific kind of aggregation, where one object is composed of one or more instances of the other. The difference between this relation and others is that the component can only exist as a part of the container. 
+
+```
+    Dependency: Class A can be affected by changes in Class B.
+    Association: Object A knows about object B. Class A depends on B.
+    Aggregation: Object A knows about object B, and consists of B. Class A depends on B.
+    Composition: Object A knows about object B, consists of B, and manages B's life cycle. Class A depend on B.
+    Implementation: Class A defines methods declared in interface B. Objects A can be treated as B. Class A depends on B.
+    Inheritance: Class A inherits interface and implementation of class B but can extend it. Object A can be treated as B. Class A depends on B.
+```
